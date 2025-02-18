@@ -14,6 +14,7 @@ public class CatalogInitialData : IInitialData
         await session.SaveChangesAsync();
     }
 
+
     private static IEnumerable<Product> GetPreconfiguredProducts() => new List<Product>()
             {
                 new Product()
