@@ -1,7 +1,5 @@
 ﻿using Basket.API.Models;
 
-
-
 namespace Basket.API.Basket.GetBasket;
 
 //public record GetBasketRequest(string UserName); 
@@ -15,9 +13,9 @@ public class GetBasketEndpoints : ICarterModule
         {
             var result = await sender.Send(new GetBasketQuery(userName));
 
-            //var respose = result.Adapt<GetBasketResponse>();
+            var respose = result.Adapt<GetBasketResponse>();
 
-            return Results.Ok(/*respose*/);
+            return Results.Ok(respose);
         })
         .WithName("GetProductById")
         .Produces<GetBasketResponse>(StatusCodes.Status200OK)
